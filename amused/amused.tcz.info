@@ -1,0 +1,12 @@
+Title:          amused.tcz
+Description:    simple music player
+Version:        0.19
+Author:         Omar Polo
+Original-site:  https://github.com/omar-polo/amused
+Copying-policy: ISC
+Size:           %%SIZE%%
+Extension_by:   vext01
+Tags:           MUSIC PLAYER
+Comments:       Binaries only
+                ----
+Current:        2026/06/06 First version (vext01)
