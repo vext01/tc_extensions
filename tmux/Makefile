@@ -11,12 +11,12 @@ fetch: ${WORK}/.fetch_done
 ${WORK}/.fetch_done:
 	mkdir -p ${WORK}
 	cd ${WORK} && wget -o ${EXT}.tcz.tar.gz \
-		https://github.com/tmux/tmux/releases/download/$V/tmux-$V.tar.gz
+		https://github.com/${EXT}/${EXT}/releases/download/$V/${EXT}-$V.tar.gz
 	touch ${WORK}/.fetch_done
 
 extract: ${WORK}/.extract_done
 ${WORK}/.extract_done: ${WORK}/.fetch_done
-	cd ${WORK} && tar zxvf tmux-$V.tar.gz
+	cd ${WORK} && tar zxvf ${EXT}-$V.tar.gz
 	touch ${WORK}/.extract_done
 
 configure: ${WORK}/.configure_done
@@ -33,8 +33,8 @@ install: ${WORK}/.install_done
 ${WORK}/.install_done: ${WORK}/.build_done
 	cd ${WRKSRC} && make install DESTDIR=${INST}
 	rm -rf ${INST}/usr/local/share/man
-	install -d ${INST}/usr/local/share/doc/tmux/
-	install ${WRKSRC}/COPYING ${INST}/usr/local/share/doc/tmux/
+	install -d ${INST}/usr/local/share/doc/${EXT}/
+	install ${WRKSRC}/COPYING ${INST}/usr/local/share/doc/${EXT}/
 	strip ${INST}/usr/local/bin/tmux
 	touch ${WORK}/.install_done
 
