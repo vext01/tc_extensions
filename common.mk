@@ -10,10 +10,10 @@ ${WORK}/.proj_done: ${WORK}/.install_done
 	cp ${EXT}.tcz.info ${PROJ}/${EXT}.tcz.info
 	if [ -e ${EXT}.tcz.dep ]; then cp ${EXT}.tcz.dep ${PROJ}; fi
 	if [ -e ${EXT}.tcz.build-dep ]; then cp ${EXT}.tcz.build-dep ${PROJ}; fi
-	if [ -e ${EXT}.tcz.tar.gz ]; then cp ${EXT}.tcz.tar.gz ${PROJ}; fi
+	if [ -e ${WORK}/${EXT}.tcz.tar.gz ]; then cp ${WORK}/${EXT}.tcz.tar.gz ${PROJ}; fi
+	if [ -e ${WORK}/${EXT}.tcz.tgz ]; then cp ${WORK}/${EXT}.tcz.tgz ${PROJ}; fi
 	echo "Compiled using https://github.com/vext01/tc_extensions" > ${PROJ}/compile_${EXT}
 	touch ${WORK}/.proj_done
-
 
 ${WORK}/.submitqc_clone_done:
 	mkdir -p ${WORK}
