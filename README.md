@@ -4,8 +4,6 @@ Makefile for building my Tiny Core extensions.
 
 ## Usage
 
-Create (or symlink) a `flags.mk` containing the flags for the platform we are compiling for.
-
-See [here](https://wiki.tinycorelinux.net/doku.php?id=wiki:creating_extensions) for recommended flags.
+`export TC_ARCH=<arch>` where arch is e.g. `rpi32`, `rpi64`.
 
 Then change into a package directory and run `make`.

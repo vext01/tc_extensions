@@ -1,0 +1,11 @@
+Title:          tmux.tcz
+Description:    auto-restart ssh sessions/tunnels
+Version:        1.4g
+Author:         Carson Harding
+Original-site:  https://www.harding.motd.ca/autossh/
+Copying-policy: BSD
+Size:           0KB
+Extension_by:   vext01
+Tags:           SSH
+Comments:       Binaries only.
+                ----

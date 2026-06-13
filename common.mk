@@ -7,7 +7,7 @@ proj: ${WORK}/.proj_done
 ${WORK}/.proj_done: ${WORK}/.install_done
 	mkdir -p ${PROJ}
 	cd ${PROJ} && mksquashfs ${INST} ${EXT}.tcz
-	cp ${EXT}.tcz.info ${PROJ}/${EXT}.tcz.info
+	cat ${EXT}.tcz.info.head ${EXT}.tcz.info.tail-$(TC_ARCH) > ${PROJ}/${EXT}.tcz.info
 	if [ -e ${EXT}.tcz.dep ]; then cp ${EXT}.tcz.dep ${PROJ}; fi
 	if [ -e ${EXT}.tcz.build-dep ]; then cp ${EXT}.tcz.build-dep ${PROJ}; fi
 	if [ -e ${WORK}/${EXT}.tcz.tar.gz ]; then cp ${WORK}/${EXT}.tcz.tar.gz ${PROJ}; fi
