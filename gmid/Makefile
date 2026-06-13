@@ -10,8 +10,8 @@ all: proj
 fetch: ${WORK}/.fetch_done
 ${WORK}/.fetch_done:
 	mkdir -p ${WORK}
-	cd ${WORK} && wget -o ${EXT}.tcz.tar.gz \
-		https://ftp.omarpolo.com/${EXT}-${V}.tar.gz
+	cd ${WORK} && wget https://ftp.omarpolo.com/${EXT}-${V}.tar.gz
+	ln -sf ${WORK}/${EXT}-${V}.tar.gz ${WORK}/${EXT}.tcz.tar.gz
 	touch ${WORK}/.fetch_done
 
 extract: ${WORK}/.extract_done

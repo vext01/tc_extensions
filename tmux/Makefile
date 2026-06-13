@@ -10,8 +10,9 @@ all: proj
 fetch: ${WORK}/.fetch_done
 ${WORK}/.fetch_done:
 	mkdir -p ${WORK}
-	cd ${WORK} && wget -o ${EXT}.tcz.tar.gz \
+	cd ${WORK} && wget \
 		https://github.com/${EXT}/${EXT}/releases/download/$V/${EXT}-$V.tar.gz
+	ln -sf ${WORK}/${EXT}-${V}.tar.gz ${WORK}/${EXT}.tcz.tar.gz
 	touch ${WORK}/.fetch_done
 
 extract: ${WORK}/.extract_done
